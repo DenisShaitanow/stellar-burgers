@@ -11,11 +11,12 @@ import {
 
 import {
   AppHeader,
-  ProtectedRoute,
   Modal,
   OrderInfo,
   IngredientDetails
 } from '@components';
+
+import {ProtectedRoute} from '../protected-route'
 
 import {
   ConstructorPage,
@@ -28,6 +29,8 @@ import {
   ProfileOrders,
   NotFound404
 } from '@pages';
+
+
 import { useAppDispatch } from '@hooks';
 import { useEffect } from 'react';
 import { checkUserAuth } from '@thunks/user';
