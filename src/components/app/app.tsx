@@ -9,13 +9,9 @@ import {
   useLocation
 } from 'react-router-dom';
 
-import {
-  AppHeader,
-  ProtectedRoute,
-  Modal,
-  OrderInfo,
-  IngredientDetails
-} from '@components';
+import { AppHeader, Modal, OrderInfo, IngredientDetails } from '@components';
+
+import { ProtectedRoute } from '../protected-route';
 
 import {
   ConstructorPage,
@@ -28,7 +24,8 @@ import {
   ProfileOrders,
   NotFound404
 } from '@pages';
-import { useAppDispatch } from '@hooks';
+
+import { useAppDispatch } from '@store';
 import { useEffect } from 'react';
 import { checkUserAuth } from '@thunks/user';
 import { fetchIngredients } from '@thunks/ingredients-product';
