@@ -1,6 +1,6 @@
 import { createSlice, isPending, isRejected } from '@reduxjs/toolkit';
 import { createOrder, getOrderByNumber, getUserOrders } from '@thunks/orders';
-import { TOrder } from '@utils-types';
+import { TOrder } from 'types';
 
 interface IOrdersState {
   userOrders: TOrder[];

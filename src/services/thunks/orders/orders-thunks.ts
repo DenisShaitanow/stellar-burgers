@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getOrderByNumberApi, getOrdersApi, orderBurgerApi } from '@api';
-import { TOrder } from '@utils-types';
+import { TOrder } from '@shared/types';
 
 export const getUserOrders = createAsyncThunk(
   'orders/getUserOrders',

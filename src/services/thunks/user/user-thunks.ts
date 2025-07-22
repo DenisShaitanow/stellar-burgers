@@ -8,8 +8,7 @@ import {
   updateUserApi,
   logoutApi
 } from '@api';
-
-import { TUser } from '@utils-types';
+import { TUser } from 'types';
 
 // Регистрация пользователя
 export const registerUser = createAsyncThunk<

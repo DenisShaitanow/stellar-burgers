@@ -1,9 +1,10 @@
-import { RootState } from '@store';
-import { TIngredient } from '@utils-types';
+import { TRootState } from '@store';
+import { TIngredient } from 'types';
 
-export const selectConstructorBun = (state: RootState): TIngredient | null =>
+export const selectConstructorBun = (state: TRootState): TIngredient | null =>
   state.constructorProduct.bun;
-export const selectConstructorIngredients = (state: RootState): TIngredient[] =>
-  state.constructorProduct.ingredients;
-export const selectConstructorState = (state: RootState) =>
+export const selectConstructorIngredients = (
+  state: TRootState
+): TIngredient[] => state.constructorProduct.ingredients;
+export const selectConstructorState = (state: TRootState) =>
   state.constructorProduct;

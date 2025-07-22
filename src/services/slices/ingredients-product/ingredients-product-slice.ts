@@ -1,6 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchIngredients } from '@thunks/ingredients-product';
-import { TIngredient } from '@utils-types';
+import { TIngredient } from 'types';
 
 export interface IIngredientsResponse {
   success: boolean;

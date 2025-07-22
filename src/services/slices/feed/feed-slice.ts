@@ -1,6 +1,6 @@
 import { createSlice, isPending, isRejected } from '@reduxjs/toolkit';
 import { getFeeds } from '@thunks/feed';
-import { TOrder } from '@utils-types';
+import { TOrder } from 'types';
 
 interface IFeedState {
   orders: TOrder[];

@@ -9,7 +9,7 @@ import {
   updateUser
 } from '@thunks/user';
 
-import { TUser } from '@utils-types';
+import { TUser } from 'types';
 
 interface IUserState {
   user: TUser | null;

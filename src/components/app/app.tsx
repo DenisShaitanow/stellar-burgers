@@ -9,9 +9,13 @@ import {
   useLocation
 } from 'react-router-dom';
 
-import { AppHeader, Modal, OrderInfo, IngredientDetails } from '@components';
-
-import { ProtectedRoute } from '../protected-route';
+import {
+  AppHeader,
+  ProtectedRoute,
+  Modal,
+  OrderInfo,
+  IngredientDetails
+} from '@components';
 
 import {
   ConstructorPage,
@@ -24,8 +28,7 @@ import {
   ProfileOrders,
   NotFound404
 } from '@pages';
-
-import { useAppDispatch } from '@store';
+import { useAppDispatch } from '@hooks';
 import { useEffect } from 'react';
 import { checkUserAuth } from '@thunks/user';
 import { fetchIngredients } from '@thunks/ingredients-product';
@@ -43,6 +46,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchIngredients());
     dispatch(checkUserAuth());
+    console.log(background);
   }, [dispatch]);
 
   const handleModalClose = () => {

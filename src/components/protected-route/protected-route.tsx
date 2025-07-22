@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAppSelector } from '@store';
+import { useAppSelector } from '@hooks';
 import { selectIsAuthChecked, selectUser } from '@selectors/user';
 import { Preloader } from '@components/ui';
 
