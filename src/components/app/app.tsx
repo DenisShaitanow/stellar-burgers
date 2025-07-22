@@ -46,7 +46,6 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchIngredients());
     dispatch(checkUserAuth());
-    console.log(background);
   }, [dispatch]);
 
   const handleModalClose = () => {
@@ -109,7 +108,7 @@ const App = () => {
         />
         <Route path='*' element={<NotFound404 />} />
       </Routes>
-      <Routes>
+      {background && (<Routes>
         <Route
           path='/feed/:number'
           element={
@@ -140,7 +139,7 @@ const App = () => {
             </Modal>
           }
         />
-      </Routes>
+      </Routes>)}
     </div>
   );
 };

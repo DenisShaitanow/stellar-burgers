@@ -32,7 +32,7 @@ export const refreshToken = (): Promise<TRefreshResponse> =>
       }
       localStorage.setItem('refreshToken', refreshData.refreshToken);
 
-      // Сохраняем только сам токен, без "Bearer "
+      // Сохраняем только сам токен, без "Bearer ", отсекаем его за ненадобностью.
       const accessToken = refreshData.accessToken.startsWith('Bearer ')
         ? refreshData.accessToken.slice(7)
         : refreshData.accessToken;

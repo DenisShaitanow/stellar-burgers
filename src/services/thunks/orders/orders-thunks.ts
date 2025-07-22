@@ -2,6 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getOrderByNumberApi, getOrdersApi, orderBurgerApi } from '@api';
 import { TOrder } from '@shared/types';
 
+
+// актион получения списка заказов 
 export const getUserOrders = createAsyncThunk(
   'orders/getUserOrders',
   async (_, { rejectWithValue }) => {
@@ -14,6 +16,8 @@ export const getUserOrders = createAsyncThunk(
   }
 );
 
+
+// актион отправки заказа на сервер
 export const createOrder = createAsyncThunk<
   TOrder,
   string[],
@@ -30,6 +34,8 @@ export const createOrder = createAsyncThunk<
   }
 });
 
+
+// актион открытие мод.окна конкретного заказа по ид.
 export const getOrderByNumber = createAsyncThunk<
   TOrder,
   string,
