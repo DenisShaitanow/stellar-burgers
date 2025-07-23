@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { deleteCookie } from '../../../utils/cookie';
 import {
   registerUserApi,
   loginUserApi,
@@ -97,7 +98,12 @@ export const logoutUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await logoutApi();
+      console.log('exit');
       localStorage.removeItem('refreshToken');
+      deleteCookie('accessToken');
+      /*
+      document.cookie =
+        'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';*/
     } catch (err) {
       return rejectWithValue('Ошибка при выходе');
     }

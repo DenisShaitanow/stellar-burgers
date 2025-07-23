@@ -31,6 +31,7 @@ import {
 import { useAppDispatch } from '@hooks';
 import { useEffect } from 'react';
 import { checkUserAuth } from '@thunks/user';
+import { useAppSelector } from '@hooks';
 import { fetchIngredients } from '@thunks/ingredients-product';
 
 const App = () => {
@@ -42,6 +43,8 @@ const App = () => {
   const profileMatch = useMatch('/profile/orders/:number')?.params.number;
   const feedMatch = useMatch('/feed/:number')?.params.number;
   const orderNumber = profileMatch || feedMatch;
+  console.log('Local Storage:', window.localStorage);
+  console.log(document.cookie);
 
   useEffect(() => {
     dispatch(fetchIngredients());
