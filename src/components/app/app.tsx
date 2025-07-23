@@ -108,38 +108,40 @@ const App = () => {
         />
         <Route path='*' element={<NotFound404 />} />
       </Routes>
-      {background && (<Routes>
-        <Route
-          path='/feed/:number'
-          element={
-            <Modal
-              onClose={handleModalClose}
-              title={`#${orderNumber && orderNumber.padStart(6, '0')}`}
-            >
-              <OrderInfo />
-            </Modal>
-          }
-        />
-        <Route
-          path='/ingredients/:id'
-          element={
-            <Modal onClose={handleModalClose} title='Детали ингредиента'>
-              <IngredientDetails />
-            </Modal>
-          }
-        />
-        <Route
-          path='/profile/orders/:number'
-          element={
-            <Modal
-              onClose={handleModalClose}
-              title={`#${orderNumber && orderNumber.padStart(6, '0')}`}
-            >
-              <OrderInfo />
-            </Modal>
-          }
-        />
-      </Routes>)}
+      {background && (
+        <Routes>
+          <Route
+            path='/feed/:number'
+            element={
+              <Modal
+                onClose={handleModalClose}
+                title={`#${orderNumber && orderNumber.padStart(6, '0')}`}
+              >
+                <OrderInfo />
+              </Modal>
+            }
+          />
+          <Route
+            path='/ingredients/:id'
+            element={
+              <Modal onClose={handleModalClose} title='Детали ингредиента'>
+                <IngredientDetails />
+              </Modal>
+            }
+          />
+          <Route
+            path='/profile/orders/:number'
+            element={
+              <Modal
+                onClose={handleModalClose}
+                title={`#${orderNumber && orderNumber.padStart(6, '0')}`}
+              >
+                <OrderInfo />
+              </Modal>
+            }
+          />
+        </Routes>
+      )}
     </div>
   );
 };

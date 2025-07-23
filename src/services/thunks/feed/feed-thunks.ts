@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getFeedsApi } from '@shared/api';
 
-
 // актион загрузки заказов. использует апищный метод.
 export const getFeeds = createAsyncThunk(
   'orders/getFeeds',

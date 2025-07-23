@@ -7,7 +7,6 @@ import { userReducer } from '@slices/user/user-slice';
 import { ordersReducer } from '@slices/orders/orders-slice';
 import { feedReducer } from '@slices/feed/feed-slice';
 
-
 // комбинирую слайсы в стор
 export const rootReducer = combineReducers({
   ingredientsProduct: ingredientsProductReducer,
@@ -26,7 +25,6 @@ const store = configureStore({
       serializableCheck: false
     })
 });
-
 
 // типизирую стор и диспатч
 export type TRootState = ReturnType<typeof rootReducer>;

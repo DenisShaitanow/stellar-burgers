@@ -14,7 +14,6 @@ const initialState: IConstructorProductState = {
   total: 0
 };
 
-
 // слайс конструктора
 export const constructorProductSlice = createSlice({
   name: 'constructorProduct',
@@ -23,7 +22,7 @@ export const constructorProductSlice = createSlice({
     addIngredient: {
       reducer: (state, action: PayloadAction<TConstructorIngredient>) => {
         if (action.payload.type === 'bun') {
-          state.bun = action.payload;   
+          state.bun = action.payload;
         } else {
           state.ingredients.push(action.payload);
         }
@@ -52,7 +51,6 @@ export const constructorProductSlice = createSlice({
     }
   }
 });
-
 
 // экспортирую актионы для компонента конструктора бургера.
 export const {

@@ -81,10 +81,10 @@ module.exports = {
       '@slices': path.resolve(__dirname, './src/services/slices'),
       '@store': path.resolve(__dirname, './src/services/store'),
       '@thunks': path.resolve(__dirname, './src/services/thunks'),
-      '@shared': path.resolve(__dirname, './src/shared'),
-      '@api': path.resolve(__dirname, './src/shared/api/burger-api'),
-      '@types': path.resolve(__dirname, './src/shared/types/types'),
-      '@utils': path.resolve(__dirname, './src/shared/utils')
+      '@shared': path.resolve(__dirname, './src/others'),
+      '@api': path.resolve(__dirname, './src/others/api/burger-api'),
+      '@types': path.resolve(__dirname, './src/others/types/types'),
+      '@utils': path.resolve(__dirname, './src/others/utils')
     }
   },
   output: {

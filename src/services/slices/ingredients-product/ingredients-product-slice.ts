@@ -19,7 +19,6 @@ const initialState: IIngredientsState = {
   error: null
 };
 
-
 // слайс с ингредиентами
 export const ingredientsProductSlice = createSlice({
   name: 'ingredientsProduct',

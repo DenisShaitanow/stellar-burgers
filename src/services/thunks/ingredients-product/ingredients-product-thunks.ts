@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getIngredientsApi } from '@api';
 import { TIngredient } from 'types';
 
-
 // актион закрузки ингредиентов
 export const fetchIngredients = createAsyncThunk<
   TIngredient[],
