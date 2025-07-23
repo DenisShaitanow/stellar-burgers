@@ -31,6 +31,7 @@ const initialState: IUserState = {
   resetPasswordSuccess: false
 };
 
+// слайс для пользователей
 const userSlice = createSlice({
   name: 'user',
   initialState,

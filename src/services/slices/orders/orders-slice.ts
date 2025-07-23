@@ -18,6 +18,8 @@ const initialState: IOrdersState = {
   orderModalData: null
 };
 
+
+// создаю слайс для заказов
 const ordersSlice = createSlice({
   name: 'orders',
   initialState,
@@ -40,7 +42,7 @@ const ordersSlice = createSlice({
         state.orderModalData = action.payload;
         state.loading = false;
       })
-      .addMatcher(isPending, (state, action) => {
+      .addMatcher(isPending, (state, action) => { //собираю в один несколько addCase
         if (action.type.startsWith('orders/createOrder')) {
           state.orderRequest = true;
           state.error = null;
@@ -49,7 +51,7 @@ const ordersSlice = createSlice({
           state.error = null;
         }
       })
-      .addMatcher(isRejected, (state, action) => {
+      .addMatcher(isRejected, (state, action) => {  //собираю в один несколько addCase
         if (action.type.startsWith('orders/createOrder')) {
           state.orderRequest = false;
           state.error = action.payload as string;

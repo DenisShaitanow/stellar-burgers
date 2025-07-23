@@ -19,6 +19,8 @@ const initialState: IIngredientsState = {
   error: null
 };
 
+
+// слайс с ингредиентами
 export const ingredientsProductSlice = createSlice({
   name: 'ingredientsProduct',
   initialState,
@@ -30,11 +32,11 @@ export const ingredientsProductSlice = createSlice({
         state.loading = false;
         state.error = null;
       })
-      .addMatcher(isAnyOf(fetchIngredients.pending), (state) => {
+      .addCase(fetchIngredients.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addMatcher(isAnyOf(fetchIngredients.rejected), (state, action) => {
+      .addCase(fetchIngredients.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
