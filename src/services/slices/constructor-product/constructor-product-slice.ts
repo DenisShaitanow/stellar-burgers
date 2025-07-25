@@ -27,8 +27,9 @@ export const constructorProductSlice = createSlice({
           state.ingredients.push(action.payload);
         }
       },
+      // добавляю Ид для соответствия интерфейсу TConstructorIngredient
       prepare: (ingredient: TIngredient) => ({
-        payload: { ...ingredient, id: uuidv4() } // добавляю Ид для соответствия интерфейсу TConstructorIngredient
+        payload: { ...ingredient, id: uuidv4() }
       })
     },
     removeIngredient: (state, action: PayloadAction<string>) => {
