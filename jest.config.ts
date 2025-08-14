@@ -13,7 +13,6 @@ module.exports = {
     '^@slices$': '<rootDir>/src/services/slices',
     '^@store$': '<rootDir>/src/services/store',
     '^@thunks$': '<rootDir>/src/services/thunks',
-    '^@shared$': '<rootDir>/src/others',
     '^@api$': '<rootDir>/src/others/api/burger-api',
     '^@types$': '<rootDir>/src/others/types/types',
     '^@utils$': '<rootDir>/src/others/utils',
