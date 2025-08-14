@@ -30,11 +30,11 @@ const feedSlice = createSlice({
         state.totalToday = action.payload.totalToday;
         state.loading = false;
       })
-      .addMatcher(isPending, (state) => {
+      .addCase(getFeeds.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addMatcher(isRejected, (state, action) => {
+      .addCase(getFeeds.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });

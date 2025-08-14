@@ -81,9 +81,6 @@ describe('теста слайса feeds', () => {
             "updatedAt": "2025-08-14T18:58:20.819Z",
             "number": 86533
         }]);
-
-
-    
     })
 
     test('проверка на загрузку', () => {
@@ -105,7 +102,4 @@ describe('теста слайса feeds', () => {
         const state = feedReducer(initialState, action);
         expect(state.error).toBe('ошибка загрузки');
     })
-    
-
-
 })
