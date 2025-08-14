@@ -59,62 +59,39 @@ describe('теста слайса ингредиентов', () => {
 
     test('test fulfilled', async () => {
         
-        jest.spyOn(store, 'dispatch').mockImplementation((action) => {
-            if (action.type === 'ingredients/fetch/pending') {
-              return action;
-            }
-            if (action.type === 'ingredients/fetch/fulfilled') {
-              return { payload: mockIngredients };
-            }
-            
-          });
-
-          await store.dispatch(fetchIngredients());
-
-          // Получаем финальное состояние и проверяем его
-          const finalState = store.getState().ingredientsProduct;
-          expect(finalState.items).toEqual(mockIngredients); // Данные подгружены
-          expect(finalState.loading).toBe(false); // Завершение загрузки
-          expect(finalState.error).toBe(null); // Без ошибок
+      const action = {
+        type: fetchIngredients.fulfilled.type,
+        payload: mockIngredients
+      };
+      const state = ingredientsProductReducer(initialState, action);
+      
+      expect(state.loading).toBe(false);
+      expect(state.items).toEqual(mockIngredients);
+      expect(state.error).toBeNull();
 
     })
 
     test('ошибочная загрузка ингредиентов', async () => {
         
-        jest.spyOn(store, 'dispatch').mockImplementation((action) => {
-          if (action.type === 'ingredients/fetch/rejected') {
-            return { payload: 'Ошибка при загрузке' };
-          }
-          
-        });
-    
-        await store.dispatch(fetchIngredients());
-    
-        // Проверяем наличие ошибки
-        const finalState = store.getState().ingredientsProduct;
-        expect(finalState.items).toEqual([]);
-        expect(finalState.loading).toBe(false);
-        expect(finalState.error).toBe('Ошибка при загрузке');
+      const action = {
+        type: fetchIngredients.rejected.type,
+        payload: "ошибка сети"
+      };
+      const state = ingredientsProductReducer(initialState, action);
+      
+      expect(state.loading).toBe(false);
+      expect(state.error).toBe("ошибка сети");
       });
 
       test('процесс загрузки', async () => {
         
-        jest.spyOn(store, 'dispatch').mockImplementation((action) => {
-            if (action.type === 'ingredients/fetch/pending') {
-                return action;
-            }
-        });
-    
-        await store.dispatch(fetchIngredients());
-    
-        const finalState = store.getState().ingredientsProduct;
+        const action = {
+          type: fetchIngredients.pending.type,
+        };
+        const finalState = ingredientsProductReducer(initialState, action);
+  
         expect(finalState.items).toEqual([]);
         expect(finalState.loading).toBe(true);
-      });
-    
-      afterEach(() => {
-        // Удаление всех шуток (spies)
-        jest.restoreAllMocks();
       });
 
 } )

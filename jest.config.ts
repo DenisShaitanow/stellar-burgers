@@ -12,7 +12,7 @@ module.exports = {
     '^@selectors$': '<rootDir>/src/services/selectors',
     '^@slices$': '<rootDir>/src/services/slices',
     '^@store$': '<rootDir>/src/services/store',
-    '^@thunks$': '<rootDir>/src/services/thunks',
+    '^@thunks(.*)$': '<rootDir>/src/services/thunks$1',
     '^@api$': '<rootDir>/src/others/api/burger-api',
     '^@types$': '<rootDir>/src/others/types/types',
     '^@utils$': '<rootDir>/src/others/utils',
