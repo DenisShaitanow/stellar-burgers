@@ -89,7 +89,6 @@ describe('теста слайса feeds', () => {
         }
 
         const state = feedReducer(initialState, action);
-        console.log(state);
         expect(state.loading).toBe(true);
     })
 
