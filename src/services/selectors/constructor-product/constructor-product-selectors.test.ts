@@ -1,6 +1,4 @@
 import { expect, test, describe } from '@jest/globals';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { constructorProductReducer } from '../../slices/constructor-product';
 import { selectConstructorBun, selectConstructorIngredients} from './constructor-product-selectors';
 import { default as testStore } from '../testStoreForSelectors';
 

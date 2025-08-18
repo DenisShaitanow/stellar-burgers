@@ -3,18 +3,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
   moduleNameMapper: {
-<<<<<<< HEAD
-    '^@components$': '<rootDir>/src/components',
-    '^@ui$': '<rootDir>/src/components/ui',
-    '^@ui-pages$': '<rootDir>/src/components/ui/pages',
-    '^@pages$': '<rootDir>/src/pages',
-    '^@services$': '<rootDir>/src/services',
-    '^@hooks$': '<rootDir>/src/services/hooks',
-    '^@selectors$': '<rootDir>/src/services/selectors',
-    '^@slices$': '<rootDir>/src/services/slices',
-    '^@store$': '<rootDir>/src/services/store',
-    '^@thunks(.*)$': '<rootDir>/src/services/thunks$1',
-=======
+
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^@ui-pages/(.*)$': '<rootDir>/src/components/ui/pages/$1',
@@ -25,7 +14,6 @@ module.exports = {
     '^@slices/(.*)$': '<rootDir>/src/services/slices/$1',
     '^@store/(.*)$': '<rootDir>/src/services/store/$1',
     '^@thunks/(.*)$': '<rootDir>/src/services/thunks/$1',
->>>>>>> 0da2312a65874aeefb7fbea4f74f59f5ac7089ae
     '^@api$': '<rootDir>/src/others/api/burger-api',
     '^@types/(.*)$': '<rootDir>/src/others/types/types/$1',
     '^@utils/(.*)$': '<rootDir>/src/others/utils/$1',

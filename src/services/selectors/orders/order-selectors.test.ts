@@ -4,7 +4,7 @@ import { default as testStore } from '../testStoreForSelectors';
 
 describe('test order-selectors', () => {
     test('test selectUserOrders', () => {
-        const orders = selectOrderModalData(testStore.getState());
+        const orders = selectUserOrders(testStore.getState());
         expect(orders).toHaveLength(0);
     })
     test('test selectOrderModalData', () => {
@@ -12,7 +12,7 @@ describe('test order-selectors', () => {
         expect(modalData).toBeNull();
     })
     test('test selectOrderRequest', () => {
-        const orderRequest = selectOrderModalData(testStore.getState());
+        const orderRequest = selectOrderRequest(testStore.getState());
         expect(orderRequest).toBe(false);
     })
 })

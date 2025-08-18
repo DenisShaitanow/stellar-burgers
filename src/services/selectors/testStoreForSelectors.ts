@@ -115,7 +115,7 @@ export const rootReducer = combineReducers({
         isAuth: false,
         isAuthChecked: false,
         loading: false,
-        error: null,
+        error: 'err',
         forgotPasswordSuccess: false,
         resetPasswordSuccess: false
     },

@@ -1,5 +1,5 @@
 import { expect, test, describe } from '@jest/globals';
-import { selectIngredients, selectIngredientsLoading, selectIngredientsError, selectBuns, selectMains,  selectSauces} from './feed-selectors';
+import { selectIngredients, selectIngredientsLoading, selectIngredientsError, selectBuns, selectMains,  selectSauces} from './ingredients-product-selectors';
 import { default as testStore } from '../testStoreForSelectors';
 
 describe('test ingredients-product-selectors', () => {
@@ -59,7 +59,7 @@ describe('test ingredients-product-selectors', () => {
     })
     test('test selectBuns', () => {
         const buns = selectBuns(testStore.getState());
-        expect(buns).toEqual({
+        expect(buns).toEqual([{
             _id: 'bun-1',
             name: 'Краторная булка N-200i',
             type: 'bun',
@@ -71,12 +71,12 @@ describe('test ingredients-product-selectors', () => {
             image: 'test-image.png',
             image_large: 'test-image-large.png',
             image_mobile: 'test-image-mobile.png'
-          });
+          }]);
 
     })
     test('test selectMains', () => {
         const mains = selectMains(testStore.getState());
-        expect(mains).toEqual({
+        expect(mains).toEqual([{
           id: '3',
           _id: 'ingredient-1',
           name: 'Биокотлета из марсианской Магнолии',
@@ -89,11 +89,11 @@ describe('test ingredients-product-selectors', () => {
           image: 'test-image.png',
           image_large: 'test-image-large.png',
           image_mobile: 'test-image-mobile.png'
-        });
+        }]);
     })
     test('test selectSauces', () => {
       const sauce = selectSauces(testStore.getState());
-      expect(sauce).toEqual({
+      expect(sauce).toEqual([{
         id: '2',
         _id: 'sauce-1',
         name: 'Соус Spicy-X',
@@ -106,6 +106,6 @@ describe('test ingredients-product-selectors', () => {
         image: 'test-image.png',
         image_large: 'test-image-large.png',
         image_mobile: 'test-image-mobile.png'
-      });
+      }]);
     })
 })
