@@ -56,7 +56,6 @@ test('test ingridients-product-thunk', async () => {
     
     await testStore.dispatch(fetchIngredients());
     const ingredients = testStore.getState().ingredientsProduct.items;
-    console.log(testStore.getState().ingredientsProduct);
     expect(ingredients).toEqual([{
         id: '2',
         _id: 'bun-8',
