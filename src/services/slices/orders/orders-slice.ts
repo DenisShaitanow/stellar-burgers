@@ -41,7 +41,7 @@ const ordersSlice = createSlice({
       state.loading = false;
       state.error = action.payload as string;
     });
-    
+
     // Обработка создания заказа
     builder.addCase(createOrder.pending, (state) => {
       state.orderRequest = true;
@@ -55,7 +55,7 @@ const ordersSlice = createSlice({
       state.orderRequest = false;
       state.error = action.payload as string;
     });
-    
+
     // Обработка получения заказа по номеру
     builder.addCase(getOrderByNumber.pending, (state) => {
       state.loading = true;

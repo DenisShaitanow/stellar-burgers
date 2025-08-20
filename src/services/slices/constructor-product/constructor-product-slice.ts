@@ -9,7 +9,7 @@ interface IConstructorProductState {
 
 export const initialState: IConstructorProductState = {
   bun: null,
-  ingredients: [],
+  ingredients: []
 };
 
 // слайс конструктора

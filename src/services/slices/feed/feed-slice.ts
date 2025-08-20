@@ -39,7 +39,6 @@ const feedSlice = createSlice({
         state.error = action.payload as string;
       });
   }
-  
 });
 
 export const feedReducer = feedSlice.reducer;
